@@ -323,10 +323,7 @@ This package is used FlatList, therefore you can override all the props at [this
 
 
 ### Todos
-- [x] Add icon for line event
-- [x] Add dash line 
-- [ ] Add dark, light theme
-- [ ] Add theme seperator
+- [ ] Add venue, people
 
 ### Contribute
 
