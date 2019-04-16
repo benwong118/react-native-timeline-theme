@@ -1,11 +1,30 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    repositories {
-        jcenter()
+      ext {
+    //buildToolsVersion = "28.0.3" //To suppress WARNING: The specified Android SDK Build Tools version (26.0.2) is ignored
+    minSdkVersion = 26 //18
+    compileSdkVersion = 28 //27
+    targetSdkVersion = 28 //26
+    supportLibVersion = "27.1.1"
+    //googlePlayServicesVersion   = "12.0.1" // for react-native-camera 16.0.1, 14.2.58
+    //googlePlayServicesVisionVersion = "15.0.2" // for react-native-camera, latest 17.0.2
+  }
+
+  repositories {
+    google()
+    jcenter()
+    maven {
+      url 'https://maven.fabric.io/public'
     }
+    maven {
+      url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
+      //oss-snapshot-local/com/firebaseui/firebase-ui-auth/4.3.2-SNAPSHOT/firebase-ui-auth-4.3.2-20190311.205031-4.pom
+    }
+    maven { url 'https://maven.fabric.io/public' }
+  }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.3.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -13,12 +32,20 @@ buildscript {
 }
 
 allprojects {
-    repositories {
-        mavenLocal()
-        jcenter()
-        maven {
-            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
-        }
+  repositories {
+    mavenLocal()
+    google()
+    jcenter { url "http://jcenter.bintray.com/"}
+    maven {
+      // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+      url "$rootDir/../node_modules/react-native/android"
     }
+    maven { url "https://jitpack.io" }
+    maven { url "https://maven.google.com" }
+  }
+}
+
+wrapper() {
+  gradleVersion = '5.3.1'
+  distributionUrl = distributionUrl.replace("bin", "all")
 }
