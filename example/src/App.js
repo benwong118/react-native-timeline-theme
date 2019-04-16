@@ -23,22 +23,24 @@ import TimeLineBasic from './TimeLineBasic'
 import TimeLineIcon from './TimeLineIcon'
 import TimeLineRenderDetail from './TimeLineRenderDetail'
 
-type Props = {};
+Props = {};
 
 
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
         </View>
-        <TimeLineBasic />
-        {/* <TimeLineIcon /> */}
-        {/* <TimeLineRenderDetail /> */}
+          <TimeLineRenderDetail/>
       </View>
     );
   }
 }
+
+//        {/*<TimeLineBasic /> */}
+//        {<TimeLineIcon/>}
+//        {/*<TimeLineRenderDetail/>*/}
 
 const styles = StyleSheet.create({
   timeStyle: {

@@ -27,7 +27,7 @@ const data = [
     time: new Date("March 6, 2018 14:15:00"),
     dashLine: true,
     dotSize: 8,
-    circleSize: 20,
+    circleSize: 25,
   },
 ]
 class TimeLineBasic extends Component {
